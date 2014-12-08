@@ -1,14 +1,32 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.0.0-rc4'
+    }
+}
+
 apply plugin: 'com.android.library'
+apply plugin: 'maven'
+
+group = 'com.tughi'
+version = '0.5'
 
 android {
-    compileSdkVersion 20
-    buildToolsVersion "20.0.0"
+    compileSdkVersion 21
+    buildToolsVersion "21.1.1"
 
     defaultConfig {
-        applicationId "com.tughi.android.database.sqlite"
         minSdkVersion 1
-        targetSdkVersion 20
-        versionCode 1
-        versionName "1.0"
+        targetSdkVersion 21
+    }
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: 'file:///Users/tughi/Dropbox/Public/maven-repository')
+        }
     }
 }
