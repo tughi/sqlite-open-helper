@@ -10,9 +10,6 @@ buildscript {
 apply plugin: 'com.android.library'
 apply plugin: 'maven'
 
-group = 'com.tughi'
-version = '0.5'
-
 android {
     compileSdkVersion 21
     buildToolsVersion "21.1.1"
@@ -26,7 +23,9 @@ android {
 uploadArchives {
     repositories {
         mavenDeployer {
-            repository(url: 'file:///Users/tughi/Dropbox/Public/maven-repository')
+            repository(url: new File(file(System.properties['user.home']), 'Dropbox/Public/maven-repository').toURI())
+            pom.groupId = 'com.tughi'
+            pom.version = '0.5'
         }
     }
 }
