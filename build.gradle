@@ -24,7 +24,7 @@ uploadArchives {
     repositories {
         mavenDeployer {
             repository(url: new File(file(System.properties['user.home']), 'Dropbox/Public/maven-repository').toURI())
-            pom.groupId = 'com.tughi'
+            pom.groupId = 'com.tughi.android'
             pom.version = '0.5'
         }
     }
